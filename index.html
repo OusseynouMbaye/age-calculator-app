@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- <script src="./src/main.js" defer></script> -->
+  <title> Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>-->
+</head>
+
+<body>
+
+  <!-- Day
+  DD -->
+
+  <div class="container">
+    <form>
+      <div class="cardAge">
+
+        <div class="card_age_group">
+          <label for="day">DAY</label>
+          <input type="number" id="dayInput" name="day" placeholder="DD">
+
+          <span class="errorMessage"></span>
+        </div>
+
+        <div class="card_age_group">
+          <label for="month">MONTH</label>
+          <input type="number" id="monthInput" name="month" placeholder="MM">
+
+          <span class="errorMessage"></span>
+        </div>
+
+        <div class="card_age_group">
+          <label for="year">YEAR</label>
+          <input type="number" id="yearInput" name="year" placeholder="YYYY">
+
+          <span class="errorMessage"></span>
+        </div>
+
+
+      </div>
+      <div class="button_hr">
+        <hr>
+        <button type="submit" id="ageCalc" class="ageCalculBtn"> <img src="./assets/images/icon-arrow.svg"
+            alt=" sumbt arrow">
+        </button>
+    </form>
+
+
+
+
+  </div>
+  <!-- display age in years, months and days -->
+  <div id="ageOutput">
+    <h3><span id="yearOutput">- -</span>years</h3>
+    <h3><span id="monthOutput">- -</span>months</h3>
+    <h3><span id="dayOutput">- -</span>days</h3>
+  </div>
+
+  </div>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Ouzinem</a>.
+  </div>
+  <script src="./src/main.js"></script>
+
+</body>
+
+</html>

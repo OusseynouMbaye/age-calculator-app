@@ -1,0 +1,130 @@
+@import url("https://fonts.google.com/specimen/Poppins");
+
+:root {
+  /* Primary color */
+  --color-purple: hsl(259, 100%, 65%);
+  --color-light-red: hsl(0, 100%, 67%);
+  /* Neutral Color */
+  --color-white: hsl(0, 0%, 100%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-light-grey);
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  color: var(--color-off-black);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  border-bottom-right-radius: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cardAge {
+  display: flex;
+  max-width: 80%;
+}
+
+hr {
+  width: 100%;
+}
+
+.button_hr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card_age_group {
+  color: var(--color-smokey-grey);
+  letter-spacing: 3px;
+}
+
+.card_age_group input {
+  width: 80%;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+  font-size: 32px;
+  padding: 12px;
+}
+
+/* .card_age_group input:hover, */
+.card_age_group input:focus {
+  border: 1px solid var(--color-purple);
+  outline: none;
+}
+
+.errorMessage {
+  border-color: var(--color-light-red);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.ageCalculBtn {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color-purple);
+}
+
+#ageOutput span {
+  color: var(--color-purple);
+}
+
+#ageOutput {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+h3 {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (max-width: 720px) {
+  .card_age_group input {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ageCalculBtn img {
+    width: 20px;
+  }
+
+  .card_age_group input {
+    font-size: 13px;
+    width: 90%;
+  }
+}
