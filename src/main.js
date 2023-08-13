@@ -1,5 +1,13 @@
 "use strict";
 
+//ERROR MESSAGES
+const errorMessages = {
+  emptyField: "This field is required!",
+  badDay: "Must be a valid day!",
+  badMonth: "Must be a valid month!",
+  badYear: "Must be a valid year!",
+};
+
 const inputDay = document.getElementById("dayInput");
 const inputMonth = document.getElementById("monthInput");
 const inputYear = document.getElementById("yearInput");
@@ -7,6 +15,10 @@ const inputYear = document.getElementById("yearInput");
 const dayOutput = document.getElementById("dayOutput");
 const monthOutPut = document.getElementById("monthOutput");
 const yearOutput = document.getElementById("yearOutput");
+
+const errorDay = document.querySelector(".error-day");
+const errorMonth = document.querySelector(".error-month");
+const errorYear = document.querySelector(".error-year");
 
 const date = new Date();
 let day = date.getDate();
@@ -23,21 +35,25 @@ function validationInput() {
     const p = input.parentElement;
     if (!input.value) {
       valid = false;
-      input.classList.add("errorMessage");
-    } else if (inputMonth.value > 12) {
+      errorDay.textContent = errorMessages.emptyField;
+      input.style.borderColor = "red";
+    } else if (inputDay.value < 0 || inputDay.value > 31) {
       valid = false;
-      // input.style.borderColor = "red";
-      input.classList.add("errorMessage");
-    } else if (inputDay.value > 31) {
+      errorDay.textContent = errorMessages.badDay;
+      input.style.borderColor = "red";
+    } else if (inputMonth.value < 0 || inputMonth.value > 12) {
       valid = false;
-      input.classList.add("errorMessage");
-      // input.style.borderColor = "red";
-    } else if (inputYear.value > year) {
+      errorMonth.textContent = errorMessages.badMonth;
+      input.style.borderColor = "red";
+    } else if (inputYear.value < 0 || inputYear.value > year) {
       valid = false;
-      input.classList.add("errorMessage");
-      // input.style.borderColor = "red";
+      errorYear.textContent = errorMessages.badYear;
+      input.style.borderColor = "red";
     } else {
       input.style.borderColor = "black";
+      errorDay.textContent = "";
+      errorMonth.textContent = "";
+      errorYear.textContent = "";
       valid = true;
     }
   });
